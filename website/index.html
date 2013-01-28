@@ -1,0 +1,121 @@
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]><!--> <html class="no-js"> <!--<![endif]-->
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+        <title>Fortune Cookie Wisdom</title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width">
+        <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
+        <link rel="shortcut icon" href="favicon.ico">
+        <link rel="stylesheet" href="css/normalize.css">
+        <link rel="stylesheet" href="css/main.css">
+        <link rel="stylesheet" href="css/styles.css">
+        <script src="js/vendor/modernizr-2.6.2.min.js"></script>
+    </head>
+    <body>
+
+<!--=======SCRIPTS - FACEBOOK LIKE BUTTON===========-->
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=377433855679732";
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+        <!--[if lt IE 7]>
+            <p class="chromeframe">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> or <a href="http://www.google.com/chromeframe/?redirect=true">activate Google Chrome Frame</a> to improve your experience.</p>
+        <![endif]-->
+
+<!--=======Wrapper - Background Gradients===========-->
+<div class="wrapper">
+<!--=======FACEBOOK LIKE BUTTON=====================-->
+    <div class="fb-wrapper"><div class="fb-like" data-href="http://www.betsydupuis.com" data-send="true" data-width="450" data-show-faces="true" data-font="arial"></div></div>
+<!--======HEADER - TITLE AND TAGLINE================-->
+    <header title="Fortune Cookie Generator">
+        <h1>Fortune Cookie Generator</h1> <!--Hidden, but kept for semantic purposes.-->
+        <h2>Learn your future and earn good luck.</h2>
+    </header>
+
+<!--======WRAPPER - FORTUNE COOKIE ANIMATION========-->
+    <div class="fortune-wrapper">
+        <div class="fortune">
+            <div id="cookie-left" class="cookie closed"><img src="img/cookie-left.png" class="cookie-pic"></div>
+            <div id="cookie-break" class="closed"><img src="img/cookie-break.png"></div>
+            <div id="scroll" class="closed"><p>Say 'hello' to the world, and the world will say 'hello' in return.</p></div>
+            <span class="crumbs closed"><b>Crumbs</b><b>Crumbs</b><b>Crumbs</b><b>Crumbs</b></span>
+            <div id="cookie-right" class="cookie closed"><img src="img/cookie-right.png" class="cookie-pic"></div>
+        </div>
+    </div>
+<!--=======BUTTON - FORTUNE GENERATION===========-->
+    <div class="generate">
+        <h2 title="Generate Fortune">Generate Fortune</h2>
+    </div>
+
+<!--=======FORM - FORTUNE COOKIE SUBMISSION===========-->
+    <div class="form-fortune">
+            <form class="create-fortune" title="Create your own Fortune">
+            <fieldset>
+                <legend align="center"><h1>Do you have wisdom to share?</h1></legend>                   
+                    <label for="new-fortune">Try writing your own fortune!</label>
+                          <!--  <input type="text" name="new-fortune" id ="new-fortune" placeholder="Share 140 characters of widsom.">-->
+                    <textarea name="new-fortune" id ="new-fortune" placeholder="Share 140 characters of widsom."></textarea>
+                    <div class="warning" id="error-url"><span>Sorry! Links and URLs don't make good fortunes. :( Try again.</span></div>
+            </fieldset>
+            <input type="submit" id="share" class="submit-disabled" value="Share" disabled="disabled"/>
+            </form>
+    </div>
+<!--Close Wrapper-->
+</div>
+<!--================FOOTER=============-->
+<footer>
+    <div class="about" title="About the Fortune Cookie">
+        <h1>About the Fortune Cookie</h1>
+        <p title="Why Fortune Cookies?">Fortune cookies have a rich history of providing inuitive widsom and fun. That's why we've brought Fortune Cookie Wisdom to life.</p>
+        <p title="How was the Fortune Cookie made?">Fortune Cookie Widsom is an interactive HTML5/JavaScript application built on the jQuery and jQuery UI libraries backed by CouchDB.</p>
+    </div>
+    <ul class="profiles" title="Page Authors">
+        <li id="betsy-dupuis">
+            <h2>Betsy Dupuis</h2>
+            <img src="img/betsy.jpg">
+            <p>Art Direction and HTML/CSS</p>
+            <a href="http://www.betsydupuis.com" title="Betsy Dupuis' Website">betsydupuis.com</a>
+        </li>
+        <li id="paul-nichols">
+            <h2>Paul Nichols</h2>
+            <img src="img/paul.jpg">
+            <p>Development, JavaScript, and Database</p>
+            <a href="http://about.me/paul.rene.nichols/" title="Paul Nichol's About.Me">About.Me</a>
+        </li>
+        <li id="github">
+            <h2>About the App</h2>
+            <p>If you would like to learn more about this project, the source code is available on GitHub.</p>
+            <a href="https://github.com/paulrenenichols/Fortune-Cookie">View this Project on Github.</a>
+        </li>
+    </ul>
+    <p id="austin" title="Made in Austin, TX">Made in Austin, TX.</p>
+</footer>
+
+<!--================Scripts=============-->
+
+        <script src="//ajax.googleapis.com/ajax/libs/jquery/1.8.2/jquery.min.js"></script>
+        <script>window.jQuery || document.write('<script src="js/vendor/jquery-1.8.2.min.js"><\/script>')</script>
+        <script src="js/vendor/jquery-ui-1.9.2.custom.min.js"></script>
+        <script src="js/vendor/json2.js"></script>
+        <script src="js/plugins.js"></script>
+        <script src="js/main.js"></script>
+
+        <!-- Google Analytics: change UA-XXXXX-X to be your site's ID. -->
+        <script>
+            var _gaq=[['_setAccount','UA-XXXXX-X'],['_trackPageview']];
+            (function(d,t){var g=d.createElement(t),s=d.getElementsByTagName(t)[0];
+            g.src=('https:'==location.protocol?'//ssl':'//www')+'.google-analytics.com/ga.js';
+            s.parentNode.insertBefore(g,s)}(document,'script'));
+        </script>
+<!--================Closings=============-->
+    </body>
+</html>
