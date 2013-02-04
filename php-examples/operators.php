@@ -1,0 +1,118 @@
+<?php
+	$number1 = 0;  //simple variable named number1
+	$number2 = 0;  //simple variable named nubmer2
+	
+	echo "showing initial state of variables";
+	echo "<br />";
+	echo "number1 is $number1";
+	echo "<br />";
+	echo "number2 is $number2";
+    echo "<br />";
+    echo "<br />";
+    
+    echo "assignment operator";
+    echo "<br />";
+    $number1 = 2;
+   	echo "number1 = 2";
+   	echo "<br />";
+   	$number2 = 3;
+	echo "number2 = 3";
+	echo "<br />";
+	echo "number1 is $number1";
+	echo "<br />";
+	echo "number2 is $number2";
+	echo "<br />";
+    echo "<br />";
+    
+    echo "equality operator";
+    echo "<br />";
+    $equality1 = ($number1 == 2);
+    echo "number1 == 2 is $equality1";
+    echo "<br />";
+    $equality2 = ($number2 == 3);
+    echo "number2 == 3 is $equality2";
+    echo "<br />";
+    $equality3 = ($number1 == $number2);
+    echo "number1 == number2 is $equality3";
+    echo "<br />";
+    echo "<br />";
+    
+    echo "arithmetic operators";
+    echo "<br />";
+    echo "addition";
+    echo "<br />";
+    $result = ($number1 + $number2);
+    echo "number1 + number2 is $result";
+    echo "<br />";
+    echo "subtraction";
+    echo "<br />";
+    $result = ($number1 - $number2);
+    echo "number1 - number2 is $result";
+    echo "<br />";
+    echo "multiplication";
+    echo "<br />";
+    $result = ($number1 * $number2);
+    echo "number1 * number2 is $result";
+    echo "<br />";
+    echo "It appears that php has fractional division, not integer division";
+    echo "<br />";
+    $result = ($number2 / $number1);
+    echo "number2 / number1 is $result";
+    echo "<br />";
+    echo "This is the modulus operater.  It calculates the remainder of integer division.";
+    echo "<br />";
+    $result = ($number2 % $number1);
+    echo "number2 / number1 is $result";
+    echo "<br />";
+    echo "This is the modulus operater.  It calculates the remainder of integer division.";
+    echo "<br />";
+    echo "increment";
+    echo "<br />";
+    $number1++;
+    echo "number1++ is $number1";
+    echo "<br />";
+    echo "decrement";
+    echo "<br />";
+    $number1--;
+    echo "number1-- is $number1";
+    echo "<br />";
+    echo "<br />";
+    echo "<br />";
+    
+    echo "special assignment operators";
+    echo "<br />";
+    $number1 += 2;
+    echo "number1 += 2 is $number1";
+    echo "<br />";
+    $number1 -= 2;
+    echo "number1 -= 2 is $number1";
+    echo "<br />";
+    $number1 *= 2;
+    echo "number1 *= 2 is $number1";
+    echo "<br />";
+    $number1 /= 2;
+    echo "number1 /= 2 is $number1";
+    echo "<br />";
+    $number1 = 20;
+    echo "number1 = 20 is $number1";
+    echo "<br />";
+    $number1 %= 3;
+    echo "number1 %= 3 is $number1";
+    echo "<br />";
+    echo "<br />";
+    
+    echo "String concatenation";
+    echo "<br />";
+    $string1 = "this is a string";
+    echo '$string1 is: "'.$string1.'"';
+    echo "<br />";
+    $string2 = " and ";
+    echo '$string2 is: "'.$string2.'"';
+    echo "<br />";
+    $string3 = "that is a string";
+    echo '$string3 is: "'.$string3.'"';
+    echo "<br />";
+    echo '$string1.$string2.$string3 is:  "'.$string1.$string2.$string3.'"';
+    echo "<br />";
+    echo "<br />";
+?>
