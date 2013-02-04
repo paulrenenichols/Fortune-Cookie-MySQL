@@ -114,5 +114,12 @@
     echo "<br />";
     echo '$string1.$string2.$string3 is:  "'.$string1.$string2.$string3.'"';
     echo "<br />";
+    echo "concatenation assignment";
+    echo "<br />";
+    $string4 = "another string ";
+    echo '$string4 is: "'.$string4.'"';
+    echo "<br />";
+    echo '$string4 .= "with no purpose" is: "'.$string4.'with no purpose'.'"';
+    echo "<br />";
     echo "<br />";
 ?>
