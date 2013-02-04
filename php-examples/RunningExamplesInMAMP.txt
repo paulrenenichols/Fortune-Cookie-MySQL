@@ -1,0 +1,10 @@
+Here's how to run these examples in MAMP.
+
+MAMP serves its web pages at this address: http://localhost:8888/
+
+The above URL refers to the following location on your hard drive: /Applications/MAMP/htdocs/
+
+If you copy the php-examples folder into /Applications/MAMP/htdocs/, you can access them in
+a web browser by going to this URL:  http://localhost:8888/php-examples/.
+
+Make sure that MAMP is running, though.  You won't be able to test the examples without running MAMP.
