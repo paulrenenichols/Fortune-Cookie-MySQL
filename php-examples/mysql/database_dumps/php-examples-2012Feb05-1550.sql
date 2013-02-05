@@ -3,7 +3,7 @@
 -- http://www.phpmyadmin.net
 --
 -- Host: localhost
--- Generation Time: Feb 05, 2013 at 10:13 PM
+-- Generation Time: Feb 05, 2013 at 10:48 PM
 -- Server version: 5.5.25
 -- PHP Version: 5.4.4
 
@@ -19,13 +19,13 @@ SET time_zone = "+00:00";
 --
 -- Database: `php-examples`
 --
+CREATE DATABASE `php-examples` DEFAULT CHARACTER SET latin1 COLLATE latin1_swedish_ci;
+USE `php-examples`;
 
 -- --------------------------------------------------------
 
 --
 -- Table structure for table `simple_table`
---
--- Creation: Feb 05, 2013 at 08:56 PM
 --
 
 CREATE TABLE `simple_table` (
