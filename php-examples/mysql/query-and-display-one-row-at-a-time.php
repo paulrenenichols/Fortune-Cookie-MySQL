@@ -54,17 +54,16 @@
 	$rows = mysql_num_rows($result);
 	
 	for ( $i = 0; $i < $rows; $i++ ) {
-		
 		/*
-		 * We are fetching individual columns, one at a time.
-		 * 
-		 * In query-and-display-one-row-at-a-time.php, we fetch whole rows instead of individual columns.
+		 * Fetch one row at a time.  The book I'm reading says this is more 
+		 * efficient that grabbing a single 'cell' or column at a time.
 		 */
+		$row = mysql_fetch_row($result);
 		echo 'row #'."$i".'<br>';
-		echo 'id:    ' . mysql_result($result, $i, 'id')    . '<br>';
-		echo 'date:  ' . mysql_result($result, $i, 'date')  . '<br>';
-		echo 'name:  ' . mysql_result($result, $i, 'name')  . '<br>';
-		echo 'text:  ' . mysql_result($result, $i, 'text')  . '<br>';
+		echo 'id:    ' . $row[0]  . '<br>';
+		echo 'date:  ' . $row[1]  . '<br>';
+		echo 'name:  ' . $row[2]  . '<br>';
+		echo 'text:  ' . $row[3]  . '<br>';
 		echo '<br>';
 	}
 ?>
