@@ -66,4 +66,9 @@
 		echo 'text:  ' . $row[3]  . '<br>';
 		echo '<br>';
 	}
+	
+	/*
+	 * Close the database connection.
+	 */
+	mysql_close($db_server);
 ?>

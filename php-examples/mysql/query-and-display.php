@@ -67,4 +67,9 @@
 		echo 'text:  ' . mysql_result($result, $i, 'text')  . '<br>';
 		echo '<br>';
 	}
+	
+	/*
+	 * Close the database connection.
+	*/
+	mysql_close($db_server);
 ?>
