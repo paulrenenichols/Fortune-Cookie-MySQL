@@ -41,16 +41,15 @@
 	/*
 	 * insert row
 	 */
-	if (isset($_POST['id']) &&
-		isset($_POST['body']) &&
+	if (isset($_POST['body']) &&
 		isset($_POST['random_id']) ) {
 		
 		$id = get_post('id');
 		$random_id = get_post('random_id');
 		$body = get_post('body');
 		
-		$query = "INSERT INTO $db_table_name (id, created_ad, random_id, body) VALUES" 
-					. "(NULL, NOW(), '$random_id', '$body')";
+		$query = "INSERT INTO $db_table_name (id, created_at, random_id, body) VALUES" 
+					. "(NULL, NOW(), $random_id, '$body')";
 		
 		/*
 		 * run query and test for failure.
@@ -59,7 +58,7 @@
 			/*
 			 * query failed
 			 */
-			error_log("INSERT failed: query used: $query<br>" . mysql_error());
+			error_log("INSERT failed: query used: $query" . mysql_error());
 		}
 		else {
 			/*

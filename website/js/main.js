@@ -197,17 +197,14 @@ $(document).ready(function() {
 		 * Construct the fortune document.
 		 */
 		var fortuneData = {};
-		fortuneData["type"] = "fortune";
 		fortuneData["body"] = fortuneBody;
 		fortuneData["random_id"] = Math.random();
 		
-		var currentDate = new Date();
-		fortuneData["created_at"] = currentDate.toUTCString();
 		
 		/*
 		 * Convert the fortune document to a JSON string.
 		 */
-		var jsonFortuneData = JSON.stringify(fortuneData);
+		//var jsonFortuneData = JSON.stringify(fortuneData);
 		
 		/*
 		 * Send the fortune as a JSON string to the database
@@ -215,11 +212,9 @@ $(document).ready(function() {
 		 */
 		$.ajax({
 			type: "POST",
-			url: "http://127.0.0.1:5984/fortunes/",
-			data: jsonFortuneData,
-			success: postNewFortuneSuccess,
-			dataType: "json",
-			contentType: "application/json"
+			url: "ajax/post-fortune.php",
+			data: fortuneData,
+			success: postNewFortuneSuccess
 		});
 	};
 	
