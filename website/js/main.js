@@ -63,6 +63,20 @@ $(document).ready(function() {
 		 * hoisting of variables would make it so that there would not be a difference
 		 * in behavior when these function definitions are moved to a different place
 		 * within the getRandomFortuneFunction.
+		 * 
+		 * 
+		 * 
+		 * 2013Feb10 14:16  Paul Nichols
+		 * 
+		 * I have a theory as to why function definition order might matter here.
+		 * 
+		 * I posit that it is an artifact of the way that I've defined my functions here.
+		 * 
+		 * The way the I'm defining my functions is of the form "var varName function(args)".
+		 * I think the JavaScript engine is hoisting the variable, but the function is not defined
+		 * until the interpreter hits the function code.
+		 * 
+		 * I think the form "function functionName(args)" may have different behaviour.
 		 */
 		
 		var randomIndexIntoReturnRows = function(countOfRows) {
@@ -165,15 +179,14 @@ $(document).ready(function() {
 		 * strings on to the end of it to specify parameters for the searching
 		 * the view.
 		 */
-		var baseViewURL = "http://127.0.0.1:5984/fortunes/_design/fortune/_view/random_fortune?";
+		var phpAjaxGetURL = "ajax/get-fortune.php";
 		
-		var endKeyString = "endkey=";
-		var startKeyString = "startkey=";
+		var randomKeyString = "randomKey=";
 		var descendingFortuneString = "&descending=true";
 		var limitString = "&limit=5";
 		
-		var ascendingFortuneURL = baseViewURL + startKeyString + randomKey + limitString;
-		var descendingFortuneURL = baseViewURL + endKeyString + randomKey + descendingFortuneString + limitString;
+		var ascendingFortuneURL = phpAjaxGetURL + randomKeyString + randomKey + limitString;
+		var descendingFortuneURL = phpAjaxGetURL + randomKeyString + randomKey + descendingFortuneString + limitString;
 		
 		var fortuneURL = ascendingFortuneURL;
 		if( getFortunesDescending ) {

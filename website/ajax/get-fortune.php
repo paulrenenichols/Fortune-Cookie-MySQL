@@ -39,18 +39,22 @@
 
 	
 	/*
-	 * insert row
+	 * select rows
 	 */
-	if (isset($_POST['name']) &&
-		isset($_POST['text']) ) {
+	if (isset($_GET['randomKey']) &&
+		isset($_GET['limit']) ) {
 		
-		$id = get_post('id');
-		$date = get_post('date');
-		$name = get_post('name');
-		$text = get_post('text');
-		
-		$query = "INSERT INTO $db_table_name (date, name, text) VALUES" 
-					. "( NOW(), '$name', '$text')";
+		$randomKey = get_get('randomKey');
+		$limit = get_get('limit');
+
+		$query = "";
+		if(isset($_GET['descending'])) {
+			$query = "SELECT body FROM $db_table_name WHERE random_id < $randomKey ORDER BY random_id DESC LIMIT $limit";
+		}
+		else {
+			$query = "SELECT body FROM $db_table_name WHERE random_id > $randomKey ORDER BY random_id LIMIT $limit";
+		}
+
 		
 		/*
 		 * run query and test for failure.
@@ -58,15 +62,40 @@
 		if ( !mysql_query($query, $db_server) ) {
 			/*
 			 * query failed
-			*/
-			echo "INSERT failed: query used: $query<br>" . mysql_error() . "<br><br>";
+			 */
+			error_log("Ajax GET SELECT failed: query used: $query<br>" . mysql_error());
 		}
 		else {
-		/*
-		* INSERT was successful
-			*/
-			echo "INSERT succeeded";
+			/*
+			 * Select was successful
+			 */
+			error_log("Ajax GET SELECT succeeded");
 		}
+		
+		/*
+		 * Query the table.
+		*/
+		$query = "SELECT * FROM $db_table_name";
+		$result = mysql_query($query);
+		
+		if (!$result) {
+			error_log("Ajax GET SELECT failed: query used: $query<br>" . mysql_error());
+			header(':', true, 404);
+			exit;
+		}
+		else {
+			error_log("Ajax GET SELECT succeeded");
+		}
+		
+		$rows = mysql_num_rows($result);
+		
+		$returnArray = array();
+		for ( $i = 0; $i < $rows; $i++ ) {
+			$row = mysql_fetch_row($result);
+			$returnArray[$i] = $row[$i];
+		}
+		
+		echo encode_json($returnArray);
 	}
 	
 	/*
@@ -74,7 +103,7 @@
 	*/
 	mysql_close($db_server);
 	
-	function get_post($var) {
-		return mysql_real_escape_string($_POST[$var]);
+	function get_get($var) {
+		return mysql_real_escape_string($_GET[$var]);
 	}
 ?>
