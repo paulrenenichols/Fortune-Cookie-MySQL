@@ -105,8 +105,7 @@ $(document).ready(function() {
 		 */
 		var getRandomFortuneRowsFirstTime = function(data) {
 			//console.log("getRandomFortuneRowsFirstTime");
-			var couchData = $.parseJSON(data);
-			var randomFortuneRows = couchData['rows'];
+			var randomFortuneRows = $.parseJSON(data);
 			
 			if( randomFortuneRows.length == 0 ) {
 				
@@ -126,7 +125,7 @@ $(document).ready(function() {
 				.complete( function() { } );
 			}
 			else { //We have rows, use the first one.
-				putFortuneInScrollElement(randomFortuneRows[randomIndexIntoReturnRows(randomFortuneRows.length)]["value"]);
+				putFortuneInScrollElement(randomFortuneRows[randomIndexIntoReturnRows(randomFortuneRows.length)]);
 			}
 		};
 	
@@ -136,10 +135,9 @@ $(document).ready(function() {
 		 */
 		var getRandomFortuneRowsSecondTime = function(data) {
 			//console.log("getRandomFortuneRowsSecondTime");
-			var couchData = $.parseJSON(data);
-			var randomFortuneRows = couchData['rows'];
+			var randomFortuneRows = $.parseJSON(data);
 			
-			putFortuneInScrollElement(randomFortuneRows[randomIndexIntoReturnRows(randomFortuneRows.length)]["value"]);
+			putFortuneInScrollElement(randomFortuneRows[randomIndexIntoReturnRows(randomFortuneRows.length)]);
 		};
 		
 		//console.log("getting random fortune");
@@ -179,7 +177,7 @@ $(document).ready(function() {
 		 * strings on to the end of it to specify parameters for the searching
 		 * the view.
 		 */
-		var phpAjaxGetURL = "ajax/get-fortune.php";
+		var phpAjaxGetURL = "ajax/get-fortune.php?";
 		
 		var randomKeyString = "randomKey=";
 		var descendingFortuneString = "&descending=true";

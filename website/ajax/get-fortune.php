@@ -57,25 +57,9 @@
 
 		
 		/*
-		 * run query and test for failure.
-		*/
-		if ( !mysql_query($query, $db_server) ) {
-			/*
-			 * query failed
-			 */
-			error_log("Ajax GET SELECT failed: query used: $query<br>" . mysql_error());
-		}
-		else {
-			/*
-			 * Select was successful
-			 */
-			error_log("Ajax GET SELECT succeeded");
-		}
-		
-		/*
 		 * Query the table.
 		*/
-		$query = "SELECT * FROM $db_table_name";
+		error_log("Running Query: " . $query);
 		$result = mysql_query($query);
 		
 		if (!$result) {
@@ -88,14 +72,17 @@
 		}
 		
 		$rows = mysql_num_rows($result);
+		error_log("Number of rows returned: $rows");
 		
+		error_log("Here are the results: ");
 		$returnArray = array();
 		for ( $i = 0; $i < $rows; $i++ ) {
 			$row = mysql_fetch_row($result);
-			$returnArray[$i] = $row[$i];
+			error_log("row $i is: $row[0]");
+			$returnArray[$i] = $row[0];
 		}
 		
-		echo encode_json($returnArray);
+		echo json_encode($returnArray);
 	}
 	
 	/*
