@@ -1,14 +1,16 @@
 This document describes how to create the php user for our database examples.
 
-First, go follow the directions in the restore-database.txt file, then continue here.
+1. First, go follow the directions in the restore-database.txt file, then continue here.
 
-Once you've restored the database, go to the MAMP start page.  You can get at the MAMP start page from the MAMP application window.  
-Make sure MAMP is running before you do this.
+2. Once you've restored the database, go to the MAMP start page.  You can get at the MAMP start page from the MAMP application window.
 
-Go to the phpMyAdmin tab on the start page. Click on the "Databases" tab.  When the new page loads, click on the database named "php-examples".
+*Make sure MAMP is running before you do this.*
 
-Now that you're looking at the admin page for "php-examples", click on the "Priviledges" tab.  Now click on the "Add user" link near the bottom of the page.
+3. Go to the phpMyAdmin tab on the start page. Click on the "Databases" tab.  When the new page loads, click on the database named "php-examples".
 
-Once this menu is loaded, put "php-examples" as the user name.  Then, click the "Host" menu and select "local".  Now type in "php-examples" for the password in both password fields.
-Finally, make sure that the radio button for 'Grant all privileges on database "php-examples"' is selected under "Database for user".  
+4. Now that you're looking at the admin page for "php-examples", click on the "Priviledges" tab.  Now click on the "Add user" link near the bottom of the page.
+
+5. Once this menu is loaded, put "php-examples" as the user name.  Then, click the "Host" menu and select "local".  Now type in "php-examples" for the password in both password fields.
+
+6. Finally, make sure that the radio button for 'Grant all privileges on database "php-examples"' is selected under "Database for user".  
 Now click on the "Add user" button, and your work is done here.

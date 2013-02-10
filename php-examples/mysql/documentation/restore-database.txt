@@ -1,14 +1,15 @@
 This document describes how to restore the php-examples databse to your local MAMP instance.
 
-Go to the MAMP start page.  You can get at the MAMP start page from the MAMP application window.  
-Make sure MAMP is running before you do this.
+1. Go to the MAMP start page.  You can get at the MAMP start page from the MAMP application window.  
 
-Go to the phpMyAdmin tab on the start page.  Click on the "Import" tab.
+ *Make sure MAMP is running before you do this.*
 
-Choose the database backup file you want to restore.  In this case it's php-examples-(date_and_time).sql.
+2. Go to the phpMyAdmin tab on the start page.  Click on the "Import" tab.
 
-Once you've selected the file, make sure the "Character set of the file:" dropdown is set to utf-8.
+3. Choose the database backup file you want to restore.  In this case it's php-examples-(date_and_time).sql.
 
-Make sure that the "Format" is set to SQL, since our backup file is a sql file.
+4. Once you've selected the file, make sure the "Character set of the file:" dropdown is set to utf-8.
 
-Now click on the "Go" button to start the restore.
+5. Make sure that the "Format" is set to SQL, since our backup file is a sql file.
+
+6. Now click on the "Go" button to start the restore.
