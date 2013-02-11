@@ -63,7 +63,7 @@
 		$result = mysql_query($query);
 		
 		if (!$result) {
-			error_log("Ajax GET SELECT failed: query used: $query<br>" . mysql_error());
+			error_log("Ajax GET SELECT failed: query used: $query" . mysql_error());
 			header(':', true, 404);
 			exit;
 		}
