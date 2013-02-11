@@ -524,7 +524,7 @@ a:link, a:visited{
                 #scroll p{
                     width: 74%;
                     height: 59px;
-                    padding: 0.75em 3.3em 0 2.25em;
+                    padding: 1em 3.3em 0.25em 2.25em;
                     margin: 0 auto;
                 }
     /*Fortune Cookie Hover*/
@@ -539,38 +539,40 @@ a:link, a:visited{
         .closed{
             width: 95%;
         }*/
+            div#cookie-left{
+                z-index: 3;
+            }
+
             #cookie-left.open{
-                width: 350px;
-                left: -290px;   
+                width: 250px;
+                left: -210px;  
             }
 
             #cookie-right.open{
-                width: 350px;
+                width: 250px;
                 left: 285px;
             }
 
             #cookie-left.closed{
-                width: 300px;
-                left: -123px;
-                /*left: 50%; /*responsive*/
+                width: 223px;
+                left: -59px;
             }
 
             #cookie-right.closed{
-                width: 300px;
-                left: 117px;
-                /*left: 50%; /*responsive*/
+                width: 223px;
+                left: 115px;
             }
 
             #cookie-break.open{
-                width:166px;
-                left: -45px;
-                top: -9px;
+                width: 138px;
+                left: -15px;
+                top: -19px;
             }
 
             #cookie-break.closed{
-                width: 142px;
-                left: 88px;
-                top: -8px;
+                width: 122px;
+                left: 114px;
+                top: -16px;
             }
 
     /*Animate Crumbs*/
