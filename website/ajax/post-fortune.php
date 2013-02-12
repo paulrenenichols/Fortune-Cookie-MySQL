@@ -14,6 +14,7 @@
 	 */
 	require_once 'login.php';
 
+	//echo "start of post-fortune.php";
 	
 	$db_server = mysql_connect($db_hostname, $db_username, $db_password);
 	
@@ -21,9 +22,11 @@
 	
 	if (!$db_server) {
 		error_log("Unable to connect to MySQL: " . mysql_error());
+		//echo "Unable to connect to MySQL: " . mysql_error();
 	}
 	else {
 		error_log("Connected to database.");
+		//echo "Connected to database.";
 	}
 	
 	/*
@@ -31,9 +34,10 @@
 	 */
 	if (mysql_select_db($db_database)) {
 		error_log("Successfully selected database: $db_database ");
+		//echo "Successfully selected database: $db_database ";
 	}
 	else {
-		error_log("Unable to select database: " . mysql_error());
+		//echo "Unable to select database: " . mysql_error();
 	}
 	
 
@@ -48,8 +52,8 @@
 		$random_id = get_post('random_id');
 		$body = get_post('body');
 		
-		$query = "INSERT INTO $db_table_name (id, created_at, random_id, body) VALUES" 
-					. "(NULL, NOW(), $random_id, '$body')";
+		$query = "INSERT INTO $db_table_name (created_at, random_id, body) VALUES" 
+					. "(NOW(), $random_id, '$body')";
 		
 		/*
 		 * run query and test for failure.
@@ -58,13 +62,13 @@
 			/*
 			 * query failed
 			 */
-			error_log("INSERT failed: query used: $query" . mysql_error());
+			//echo "INSERT failed: query used: $query" . mysql_error();
 		}
 		else {
 			/*
 			 * INSERT was successful
 			 */
-			error_log("INSERT succeeded");
+			//echo "INSERT succeeded";
 		}
 	}
 	
@@ -76,5 +80,7 @@
 	function get_post($var) {
 		return mysql_real_escape_string($_POST[$var]);
 	}
+	
+	//echo "end of post-fortune.php";
 ?>
 

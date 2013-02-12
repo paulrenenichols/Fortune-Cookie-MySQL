@@ -14,6 +14,7 @@
 	 */
 	require_once 'login.php';
 
+	echo "start of get-fortune.php";
 	
 	$db_server = mysql_connect($db_hostname, $db_username, $db_password);
 	
@@ -21,9 +22,11 @@
 	
 	if (!$db_server) {
 		error_log("Unable to connect to MySQL: " . mysql_error());
+		echo "unable to connect to db: " . mysql_error();
 	}
 	else {
 		error_log("Connected to database.");
+		echo "connected to db";
 	}
 	
 	/*
@@ -31,9 +34,12 @@
 	 */
 	if (mysql_select_db($db_database)) {
 		error_log("Successfully selected database: $db_database ");
+		echo "Successfully selected database: $db_database ";
 	}
 	else {
 		error_log("Unable to select database: " . mysql_error());
+		echo "Unable to select database: " . mysql_error();
+		
 	}
 	
 
@@ -93,4 +99,7 @@
 	function get_get($var) {
 		return mysql_real_escape_string($_GET[$var]);
 	}
+	
+	echo "end of get-fortune.php";
+	
 ?>
